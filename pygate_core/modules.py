@@ -24,7 +24,7 @@ def load(moduleNames):
     """Loads all the gateway modules"""
     global modules
     logging.info("loading modules")
-    modules = dict(zip(moduleNames, map(__import__, moduleNames)))       # load the modules and put them in a dictionary, key = the name of the module.
+    modules = dict(zip(moduleNames, map(__import__, ['pygate_' + name for name in moduleNames])))       # load the modules and put them in a dictionary, key = the name of the module. Also make certain that the name of the module is prepended with 'pygate'
     for key, mod in modules.iteritems():
         if mod.connectToGateway:
             logging.info("connecting " +  key + " to gateway")

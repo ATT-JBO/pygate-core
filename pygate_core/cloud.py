@@ -45,6 +45,8 @@ def connect(actuatorcallback, sensorCallback):
             else:
                 logging.error("Failed to authenticate with IOT platform")
                 time.sleep(2)                                           # wait a little until we try again.
+        except KeyboardInterrupt:                                       # when trying to stop the gateway, make certain this loop doesn't get stuck because of the exception handling.
+            return
         except:
             logging.exception("failed to connect")
             time.sleep(2)
