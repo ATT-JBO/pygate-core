@@ -9,7 +9,7 @@ import logging
 import os.path
 import threading
 
-from core import config
+from pygate_core import config
 
 
 class DeviceCounter:

@@ -11,7 +11,7 @@ __status__ = "Prototype"  # "Development", or "Production"
 
 import logging
 
-from core import assetStateCache as cache
+from pygate_core import assetStateCache as cache
 
 processors = {}
 

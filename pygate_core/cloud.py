@@ -5,7 +5,7 @@ from uuid import getnode as get_mac
 
 import att_iot_gateway.att_iot_gateway as IOT                              #provide cloud support
 
-from core import assetStateCache as valueCache, config
+from pygate_core import assetStateCache as valueCache, config
 
 existingGatewayAssets = {}                                                      # used during sync of asset gateways: contains all the existing assets, when a new asset is created, the ref is remvoed from this list.
 _sensorCallback = None                                                          #callback for pyGate module, called when sensor data is sent out.

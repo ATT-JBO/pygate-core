@@ -14,7 +14,7 @@ import logging
 import thread
 import threading
 
-from core import config, processors, cloud
+from pygate_core import config, processors, cloud
 
 modules = {}                                    # the list of dynamically loaded modules.
 _modulesName = 'modules'

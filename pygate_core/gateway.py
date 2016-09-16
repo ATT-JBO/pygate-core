@@ -1,6 +1,6 @@
 ﻿#allows a gateway plugin to manage it's cloud presence.
 
-from core import cloud
+from pygate_core import cloud
 
 
 class Gateway(object):

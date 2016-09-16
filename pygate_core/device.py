@@ -1,6 +1,6 @@
 ﻿#allows a device to manage it's cloud presence.
 
-from core import cloud
+from pygate_core import cloud
 
 
 class Device(object):
