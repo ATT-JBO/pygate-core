@@ -59,7 +59,7 @@ def load():
 def loadConfig(fileName, asJson = False):
     """loads the config file from the correct directory and returns a ConfigParser object that can be used to load
        config data"""
-    fileName = '../config/' + fileName
+    fileName = os.path.join(configPath, fileName)
     if not os.path.isfile(fileName):
         logging.error('file not found ' + fileName)
         return None

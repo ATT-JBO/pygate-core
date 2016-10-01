@@ -35,8 +35,11 @@ def load(moduleNames):
 
 def syncGateway(full = False):
     content = cloud.getGateway()
-    syncGatewayAssets(content['assets'])
-    syncDevices(content['devices'], full)
+    if content:
+        syncGatewayAssets(content['assets'])
+        syncDevices(content['devices'], full)
+    else:
+        logging.error("could not sync gateway: failed to retrieve devices from cloud")
 
 def syncGatewayAssets(currentAssets):
     '''allows the modules to sync with the cloud, the assets that should come at the level of the gateway
