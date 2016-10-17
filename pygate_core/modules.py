@@ -72,11 +72,11 @@ def syncDevices(devices, full = False):
     """
     deviceList = syncDeviceList(devices)
     for key, value in modules.iteritems():
+        subList = deviceList.filter(key)
+        deviceList.remove(subList)              # remove the sublist, so we can see at the end of the ride which 'modules' where present last time, but not anymore, so we can also remove those devices. Do before asking module to sync, cause it could modify the list.
         if hasattr(value, 'syncDevices'):
             logging.info("syncing devices for " +  key)
             try:
-                subList = deviceList.filter(key)
-                deviceList.remove(subList)              # remove the sublist, so we can see at the end of the ride which 'modules' where present last time, but not anymore, so we can also remove those devices. Do before asking module to sync, cause it could modify the list.
                 value.syncDevices(subList, full)
             except:
                 logging.exception('failed to sync devices for module ' + key + '.')
