@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='pygate_core',
-    version='1.1',
+    version='1.2',
     packages=['pygate_core'],
     url='https://github.com/allthingstalk/pygate-core',
     license='',
